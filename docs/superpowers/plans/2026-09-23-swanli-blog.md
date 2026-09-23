@@ -160,11 +160,12 @@ cd /home/hli/dev/swanli && npm run build
 (npm run preview -- --port 4321 &>/tmp/preview.log & echo $! > /tmp/preview.pid); sleep 4
 curl -sf http://localhost:4321/ | grep -c "swanli"                      # >= 1 (site title)
 curl -sf http://localhost:4321/about/ | grep -o "Hi, I'm Li Hong"       # found
-curl -sf http://localhost:4321/rss.xml | grep -o "<author>[^<]*" | head -1   # Li Hong
+curl -sf http://localhost:4321/rss.xml | grep -o "<title>[^<]*" | head -1   # swanli (channel title)
+curl -sf http://localhost:4321/rss.xml | grep -o "<description>[^<]*" | head -1   # new site description
 kill $(cat /tmp/preview.pid)
 ```
 
-Expected: build passes; title shows `swanli`; about page shows the new bio; RSS author is `Li Hong`. (Upstream sample posts are still present at this stage — that is fine; Task 3 replaces them.)
+Expected: build passes; title shows `swanli`; about page shows the new bio; the RSS channel title/description reflect the new identity (v6's `rss.xml.ts` renders channel `title`/`description`/`site` plus items — no `<author>` element). (Upstream sample posts are still present at this stage — that is fine; Task 3 replaces them.)
 
 - [ ] **Step 4: Commit**
 
