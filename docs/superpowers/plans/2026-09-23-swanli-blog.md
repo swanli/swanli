@@ -50,6 +50,7 @@ git clone --depth 1 https://github.com/satnaing/astro-paper swanli-upstream
 cd /tmp/swanli-upstream
 tar cf - --exclude=.git . | (cd /home/hli/dev/swanli && tar xf -)
 cd /home/hli/dev/swanli
+rm -f pnpm-lock.yaml pnpm-workspace.yaml   # spec: npm only — upstream ships pnpm artifacts; npm install will create package-lock.json
 ls astro-paper.config.ts astro.config.ts package.json src/content.config.ts   # all must exist
 ls docs/superpowers/specs/                                                     # spec must survive
 ```
