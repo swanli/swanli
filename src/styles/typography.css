@@ -110,6 +110,11 @@
     }
   }
 
+  /* KaTeX display math inherits the theme foreground color (light/dark) */
+  .prose .katex-display {
+    @apply text-foreground;
+  }
+
   /* ===== Code Blocks & Syntax Highlighting ===== */
   .astro-code {
     @apply outline-border flex border bg-(--shiki-light-bg) text-(--shiki-light) [&_span]:text-(--shiki-light);
