@@ -1,9 +1,9 @@
 ---
-title: 'Learning Curves'
-description: 'Here is a sample of bifurcation.'
+title: "Learning Curves"
+description: "Here is a sample of bifurcation."
 pubDatetime: 2026-01-15T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
 
 ```julia

@@ -1,10 +1,11 @@
 ---
-title: 'Bifurcation'
-description: 'Here is a sample of bifurcation.'
+title: "Bifurcation"
+description: "Here is a sample of bifurcation."
 pubDatetime: 2026-01-11T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
+
 ## Drawing a bifurcation diagram for logistic map
 
 ```julia
@@ -38,6 +39,7 @@ scatter(all_Rs, all_Ns,
     xlabel = "Intrinsic rate of increase",
     ylabel = "Population size (100 final values)")
 ```
+
 ![](../../../assets/images/bifurcation-5.png)
 
 ## Another version

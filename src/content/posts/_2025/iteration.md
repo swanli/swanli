@@ -7,6 +7,7 @@ pubDatetime: 2026-04-01T11:37:19Z
 draft: true
 heroImage: '../../../assets/images/blog-placeholder-1.jpg'
 ---
+
 ## A multidimensional boxcar filter
 
 ```julia
@@ -27,16 +28,16 @@ function boxcar3(A::AbstractArray)
 end
 ```
 
-````
+```
 boxcar3 (generic function with 1 method)
-````
+```
 
 ```julia
 A = rand(8, 6, 4)
 boxcar3(A)
 ```
 
-````
+```
 8×6×4 Array{Float64, 3}:
 [:, :, 1] =
  0.391957  0.465015  0.449208  0.421887  0.48994   0.561821
@@ -77,4 +78,4 @@ boxcar3(A)
  0.416905  0.402751  0.391751  0.400803  0.443994  0.49355
  0.422521  0.346356  0.32703   0.374617  0.477058  0.500752
  0.455578  0.383915  0.36861   0.427098  0.588858  0.625178
-````
+```

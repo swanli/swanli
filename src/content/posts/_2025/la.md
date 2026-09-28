@@ -1,9 +1,9 @@
 ---
-title: 'Linear Algebra'
-description: 'Here is a sample of bifurcation.'
+title: "Linear Algebra"
+description: "Here is a sample of bifurcation."
 pubDatetime: 2026-01-14T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
 
 ## Linear system of equations
@@ -36,7 +36,6 @@ The degree is n. It's easy to overfitted.
 When we're confronted with **large amounts of data**, we often look for a **simple
 quantitative model** that describes basic trends in the data.
 
-
 ```julia
 using Plots, LinearAlgebra
 
@@ -48,9 +47,11 @@ plot(t, m, seriestype = :scatter, label = "data")
 xlabel!("time")
 ylabel!("money")
 ```
+
 ![](../../../assets/images/la-4.png)
 
 ### Linear regression
+
 Set the degree to 1, the equations become $p(x)=C+Dt$ or in matrix expression: $Ax=m$, `A` is $n\times 2$ matrix.
 
 ```julia
@@ -58,41 +59,44 @@ A = [ones(n) t]
 rank(A), rank([A m])
 ```
 
-````
+```
 (2, 3)
-````
+```
+
 We choose $x$ to make $Ax-b$ as small as possible! This special value $x=x_*$ is called the
-least-squares solution. 
+least-squares solution.
 
 ```julia
 M = A' * A
 ```
 
-````
+```
 2×2 Matrix{Float64}:
   100.0    1084.61
  1084.61  14752.6
-````
+```
 
 ```julia
 b = A' * m
 xstar = M \ b
 ```
 
-````
+```
 2-element Vector{Float64}:
  8.715219696815623
  7.181414777955385
-````
+```
 
 ```julia
 tt = 20 * collect(0:250) / 250
 mm = xstar[1] .+ xstar[2] * tt
 plot!(tt, mm, lc = :black, lw = 3)
 ```
+
 ![](../../../assets/images/la-10.png)
 
 ## Quadratic regression
+
 Try to capture the upward curve by adding a quadratic term to our linear model. $p(x)=C+Dt+Et^2$
 or in matrix expression: $Ax=m$, $A$ is $n\times 3$ matrix.
 
@@ -104,23 +108,23 @@ xstar = M \ b
 mm = xstar[1] .+ xstar[2]*tt + xstar[3]*tt.^2
 plot!(tt, mm, lc = :red, lw = 3)
 ```
-![](../../../assets/images/la-12.png)
 
+![](../../../assets/images/la-12.png)
 
 ## Eigenvalue power method
 
 ## Concept
 
-* Hermitian Matrix $A^H=A$
-* Idempotent Matrix $A^2=A$
-* Nilpotent Matrix $A^2=O$
-* Unipotent Matrix $A^2=I$
-* Tripotent Matrix $A^3=A$
-* Involutory Matrix $A^2=I$
-* $\langle A,B\rangle=A^{H}B$
-* $exp(A)=\sum_{k=0}^{\infty}\frac{1}{k!}A^k$
-* $log(I_n-A)=-\sum_{k=0}^{\infty}\frac{1}{k!}A^k$
-* Direct sum $V=A\oplus B$ if
+- Hermitian Matrix $A^H=A$
+- Idempotent Matrix $A^2=A$
+- Nilpotent Matrix $A^2=O$
+- Unipotent Matrix $A^2=I$
+- Tripotent Matrix $A^3=A$
+- Involutory Matrix $A^2=I$
+- $\langle A,B\rangle=A^{H}B$
+- $exp(A)=\sum_{k=0}^{\infty}\frac{1}{k!}A^k$
+- $log(I_n-A)=-\sum_{k=0}^{\infty}\frac{1}{k!}A^k$
+- Direct sum $V=A\oplus B$ if
 
 $$
   \begin{align}
@@ -129,13 +133,13 @@ $$
    \end{align}
 $$
 
-* Hadamard product $A\odot B=[A_{ij}B_{ij}]$
-* Kronecher (direct, tensor) product $A\otimes B=[a_{ij}B]$
-* Vandermonde Matrix
-* Fourier Matrix
-* Hankel Matrix
-* Hadamard Matrix
-* Toeplitz Matrix
+- Hadamard product $A\odot B=[A_{ij}B_{ij}]$
+- Kronecher (direct, tensor) product $A\otimes B=[a_{ij}B]$
+- Vandermonde Matrix
+- Fourier Matrix
+- Hankel Matrix
+- Hadamard Matrix
+- Toeplitz Matrix
 
 ## Quadratic form and symmetric positive definite matrix
 
@@ -152,7 +156,7 @@ $$
 \mathbf{x}^T \mathbf{A}\mathbf{x}>0
 $$
 
-## Factorization 
+## Factorization
 
 ### LU factorization
 
@@ -165,7 +169,7 @@ Row-Pivoted LU (PLU) factorization
 >
 > When performing elimination in column j, choose as the pivot the element in column j
 > that is largest in absolute value.
-> 
+>
 > The row-pivoted LU factorization runs to completion if and only if the original matrix
 > is invertible.
 
@@ -188,18 +192,18 @@ A **Householder reflector** is a matrix of the form $\mathbf{P}=\mathbf{I}-2\mat
 
 ## Norm
 
-* Schatten p-norm
+- Schatten p-norm
 
 ## Projector
 
-* Orthogonal Projector
-* Oblique Projector
+- Orthogonal Projector
+- Oblique Projector
 
-## Linear Map vs  Matrix
+## Linear Map vs Matrix
 
 A linear map is far more general than a matrix. Any linear map T over a vector
-space V over a field F, just needs to satisfy two properties: For  v,w∈V  and
-c∈F , then  T(v+w)=T(v)+T(w) and  T(cv)=cT(v) .
+space V over a field F, just needs to satisfy two properties: For v,w∈V and
+c∈F , then T(v+w)=T(v)+T(w) and T(cv)=cT(v) .
 
 Notice that these properties are satisfied by matrices. However, to actually
 construct a matrix, one needs more than a map. One also needs a basis. Without
@@ -213,7 +217,7 @@ because there is a whole well developed theory of how to compute with them.
 Computationally speaking, matrices are fantastically useful! However, once
 again, we can only have a matrix given a map AND a basis.
 
-In linear map your vector space  V  does not have to be a subset of ``R^n``;
+In linear map your vector space V does not have to be a subset of `R^n`;
 instead, it can be an abstract vector space of functions, where you may or may
 not be able to specify a finite number of basis functions for the space. In
 particular, if you're dealing with an infinite dimensional vector space, then
@@ -230,4 +234,3 @@ $$
 \left[\begin{array}{c}x \\ y \end{array}\right] +
 \left[\begin{array}{c}t_x \\ t_y \end{array}\right]
 $$
-

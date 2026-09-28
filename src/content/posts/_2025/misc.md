@@ -1,9 +1,9 @@
 ---
-title: 'Misc Notes'
+title: "Misc Notes"
 description: "Misc notes these can't be classified to a specific topic"
 pubDatetime: 2026-04-02T20:37:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
 
 ```julia
@@ -15,6 +15,6 @@ const mysin_ci = Base.specialize_method(Base._which(Tuple{typeof(mysin), Float64
 @btime invoke(mysin, mysin_ci, x) setup=(x=rand())
 ```
 
-````
+```
 0.7049483800155094
-````
+```

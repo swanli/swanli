@@ -1,17 +1,17 @@
 ---
-title: 'Numerical Basic'
-description: 'Here is a sample of bifurcation.'
+title: "Numerical Basic"
+description: "Here is a sample of bifurcation."
 pubDatetime: 2026-01-16T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
 
 ## Floating-point numbers
 
 The set $\mathbb{F}$ of **floating-point** numbers consists of zero and all numbers of the form
 $\pm(1+f)\times 2^n$ where n is an integer called the **exponent**, and $1+f$ is the **mantissa**
- or **significand**, in which $=\sum_{i=1}^{d}b_i 2^{-i}, b_i\in {0,1}$. For a fixed integer d 
- called the binary **precision**. So the mantissa $(1+f)$ represents as a number in
+or **significand**, in which $=\sum_{i=1}^{d}b_i 2^{-i}, b_i\in {0,1}$. For a fixed integer d
+called the binary **precision**. So the mantissa $(1+f)$ represents as a number in
 $[1, 2)$ or $[2^0, 2^1)$ and there are exactly $2^d$` evenly spaced numbers.
 
 ## Machine epsilon
@@ -32,7 +32,7 @@ Loss of significance.
 
 ## Condition numbers
 
-The ratio of the relative changes(error) in result and data. 
+The ratio of the relative changes(error) in result and data.
 
 Condition numbers can be used to estimate erros
 
@@ -48,8 +48,8 @@ $$
 \begin{eqnarray}
 A(x+\vartriangle x)=b+\vartriangle b \\
 x+\vartriangle x=A^{-1}(b+\vartriangle b)=A^{-1}b+A^{-1}\vartriangle b \\
-\vartriangle x= A^{-1}\vartriangle b 
-\end{eqnarray} 
+\vartriangle x= A^{-1}\vartriangle b
+\end{eqnarray}
 $$
 
 > "Matrix condition number -- NOTE NOT Worked YET"
@@ -65,7 +65,6 @@ not always true: some stable algorithms may produce a large backward error.
 
 flops: floating-point operations
 
-
 ## Significant Digits of Precision
 
 Significant digits are digits beginning with the leftmost nonzero digit and ending with the
@@ -76,7 +75,7 @@ rounded prior to each of the calculations.
 
 In adding and substracting numbers, the result is accute only to the smallest number of
 significant digits used in any step of the calculation. In multiplication and division of
-numbers, the results may be even more *misleading*.
+numbers, the results may be even more _misleading_.
 
 ## Errors: Absolute and Relative
 
@@ -131,9 +130,8 @@ Base on [A github notebook](https://github.com/vschaik/Conjugate-Gradient) and t
 
 ### Introduction
 
-CG is the most popular iterative method for solving large systems of linear equations. 
-CG is effective for systems of the form: ``\mathbf{A}\mathbf{x}=\mathbf{b}``.
-
+CG is the most popular iterative method for solving large systems of linear equations.
+CG is effective for systems of the form: `\mathbf{A}\mathbf{x}=\mathbf{b}`.
 
 ```julia
 using Plots
@@ -159,10 +157,12 @@ function simpledemo()
 end
 ```
 
-````
+```
 simpledemo (generic function with 1 method)
-````
+```
+
 ## Krylov
+
 ### Example
 
 ```julia
@@ -197,7 +197,7 @@ as well)
 ## Conjugate gradient method
 
 The conjugate gradient method can be seen as a special case of the conjugate direction method
-applied to minimization of the quadratic function. It can also be seen as a variant of the 
+applied to minimization of the quadratic function. It can also be seen as a variant of the
 Arnoldi/Lanczos iteration applied to solving linear systems. It can be seen from imposing
 orthogonality and conjugacy.
 
@@ -208,4 +208,5 @@ orthogonality and conjugacy.
 ### Polak-Ribiere method
 
 ## Linear stability analysis
+
 $x_*$ is fixed point, then $x_* = f(x_*)$

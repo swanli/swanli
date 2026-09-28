@@ -1,10 +1,11 @@
 ---
-title: 'Differentiable programming'
-description: 'Differentiable programming'
+title: "Differentiable programming"
+description: "Differentiable programming"
 pubDatetime: 2026-01-12T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
+
 ## Concept
 
 The promise of differentiable programming is that we can move towards taking the derivatives
@@ -16,4 +17,3 @@ evolution of automatic differentiation (AD, sometimes called algorithmic differe
 
 - Zygote.jl
 - Enzyme.jl
-

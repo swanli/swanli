@@ -1,9 +1,9 @@
 ---
-title: 'ML Math'
-description: 'Master essential statistics with interactive visualizations.'
+title: "ML Math"
+description: "Master essential statistics with interactive visualizations."
 pubDatetime: 2026-01-18T05:17:19Z
 draft: true
-heroImage: '../../../assets/images/blog-placeholder-1.jpg'
+heroImage: "../../../assets/images/blog-placeholder-1.jpg"
 ---
 
 Explore 15 essential concepts in Statistics designed to build your machine learning mathematical foundation.
@@ -38,20 +38,20 @@ mode (unimodal), or multiple modes (bimodal, multimodal).
 **Skewness** describes the shape of your data distribution. Is it balanced on both sides, or does it
 have a long tail stretching in one direction?
 
-| Symmtric | Right-Skewed(+) | Left-Skewed(-) |
-|---|---|---|
-| $\text{Skewness} \approx 0$ | $\text{Skewnewss} > 0$ | $\text{Skewness} < 0$ |
-| $\text{Mean} \approx \text{Media} \approx \text{Mode}$ | Tail stretches right. $\text{Mode} < \text{Median} < \text{Mean}$ | Tail stretches left. $\text{Mean} < \text{Median} < \text{Mode}$ | 
+| Symmtric                                               | Right-Skewed(+)                                                   | Left-Skewed(-)                                                   |
+| ------------------------------------------------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------- |
+| $\text{Skewness} \approx 0$                            | $\text{Skewnewss} > 0$                                            | $\text{Skewness} < 0$                                            |
+| $\text{Mean} \approx \text{Media} \approx \text{Mode}$ | Tail stretches right. $\text{Mode} < \text{Median} < \text{Mean}$ | Tail stretches left. $\text{Mean} < \text{Median} < \text{Mode}$ |
 
 ### Kurtosis
 
 While skewness tells us about the asymmetry of our data, **kurtosis** tells us about the tails.
 Specifically: how likely are extreme values (outliers) compared to a normal distribution?
 
-| Platykurtic | Mesokurtic | Leptokurtic |
-|---|---|---|
-|Kurtosis < 3 | Kurtosis = 3 | Kurtosis > 3 |
-| Flatter peak, thinner tails. Fewer extreme values than normal. | Normal distribution. The baseline for comparison. |  Sharper peak, fatter tails. More extreme values than normal. |
+| Platykurtic                                                    | Mesokurtic                                        | Leptokurtic                                                  |
+| -------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------ |
+| Kurtosis < 3                                                   | Kurtosis = 3                                      | Kurtosis > 3                                                 |
+| Flatter peak, thinner tails. Fewer extreme values than normal. | Normal distribution. The baseline for comparison. | Sharper peak, fatter tails. More extreme values than normal. |
 
 ### Measures of Spread (Dispersion)
 
@@ -80,25 +80,25 @@ $$
 
 ### Formulas Reference
 
-| Metric | Formula | Use When
-|---|---|---|
-|Mean|$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1+x2+...+x_n}{n}$|Data is symmetric, no outliers|
-|Media|Middle value (sorted)|Skewed data or outliers present|
-|Mode|Most frequent value|Categorical data or identifying peaks|
-|Range|$\text{Max} - \text{Min}$|uick overview, no outliers|
-|IQR|$\text{IQR} = Q_3 - Q_1$|Robust spread, outlier detection|
-|Variance|$\sigma^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2$|Mathematical analysis, ML algorithms|
-|Std Dev|$\sigma = \sqrt{\sigma^2}$|Interpretable spread in original units|
+| Metric   | Formula                                                            | Use When                               |
+| -------- | ------------------------------------------------------------------ | -------------------------------------- |
+| Mean     | $\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i = \frac{x_1+x2+...+x_n}{n}$ | Data is symmetric, no outliers         |
+| Media    | Middle value (sorted)                                              | Skewed data or outliers present        |
+| Mode     | Most frequent value                                                | Categorical data or identifying peaks  |
+| Range    | $\text{Max} - \text{Min}$                                          | uick overview, no outliers             |
+| IQR      | $\text{IQR} = Q_3 - Q_1$                                           | Robust spread, outlier detection       |
+| Variance | $\sigma^2 = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^2$            | Mathematical analysis, ML algorithms   |
+| Std Dev  | $\sigma = \sqrt{\sigma^2}$                                         | Interpretable spread in original units |
 
 ## Population vs. Sample
 
-|Metric|Population Parameter|Smaple Statistic|Relationship|
-|---|---|---|---|
-|Size|N|n|Usually $n \ll N$|
-|Mean|$\mu$(Mu)|$\bar{x}$(x-bar)|$\bar{x}$ estimates $\mu$|
-|Variace|$\sigma^2$(Sigma Sq.)|$s^2$ Bessel's Correction|estimates|
-|Std. Deviation|$\sigma$(Sigma)|$s$|estimates|
-|Proportion|$p$ or $\pi$|$\hat{p}$(p-hat)|estimates|
+| Metric         | Population Parameter  | Smaple Statistic          | Relationship              |
+| -------------- | --------------------- | ------------------------- | ------------------------- |
+| Size           | N                     | n                         | Usually $n \ll N$         |
+| Mean           | $\mu$(Mu)             | $\bar{x}$(x-bar)          | $\bar{x}$ estimates $\mu$ |
+| Variace        | $\sigma^2$(Sigma Sq.) | $s^2$ Bessel's Correction | estimates                 |
+| Std. Deviation | $\sigma$(Sigma)       | $s$                       | estimates                 |
+| Proportion     | $p$ or $\pi$          | $\hat{p}$(p-hat)          | estimates                 |
 
 ### The Goal: Statistical Inference
 
@@ -114,39 +114,39 @@ $$
   - Significance
 
 ### Machine Learning Applications
- 
+
 In ML, the distinction between Population and Sample defines our entire workflow.
 
 > 1. **Training Data is a Sample**
 >
 > Your dataset (ImageNet, Titanic, etc.) is always a sample (n). The real world where your model is
 > deployed is the population (N). The Central Limit Theorem explains why sampling works.
-> 
+>
 > The Challenge: We want to minimize error on the Population (Generalization Error), but we can only
 > optimize error on the Sample (Training Error).
 
 > 2. **Overfitting**
-> 
+>
 > Overfitting happens when a model learns the "noise" of the sample rather than the "signal" of
 > the population. It effectively memorizes the specific n examples but fails when exposed to the N
 > universe. Regularization helps prevent this.
 
 > 3. **Train/Test Split**
-> 
+>
 > We split our available sample into "Train" and "Test". We pretend the "Test" set is the Population.
 > If the model performs well on the Test set (data it hasn't seen), we infer it will perform well on
 > the real Population.
 
 ### Common Mistakes
- 
+
 > **The "Big Data" Fallacy**
-> 
+>
 > Thinking that because your n is huge (e.g., 1 million bulbs), it equals N. If those 1 million bulbs
 > all come from just one factory line (e.g., Line A), it is still a biased sample of the population
 > (all factory lines).
 
 > **Data Leakage**
-> 
+>
 > Using information from the Population (or Test set) to influence the Sample (Training set). For
 > example, imputing missing values using the mean of the entire dataset instead of just the training
 > set.
@@ -161,7 +161,7 @@ statistics (like means) calculated from many hypothetical samples, not the behav
 data points.
 
 ### Sampling Distribution of the Mean
- 
+
 If we draw samples from a population with mean $\mu$ and standard deviation $\sigma$, the
 distribution of sample means $\bar{x}$ follows two fundamental rules:
 
@@ -170,13 +170,13 @@ distribution of sample means $\bar{x}$ follows two fundamental rules:
 
 ### Crucial: Standard Deviation vs Standard Error
 
-|Metric|Symbol|Formula|What it measures|
-|---|---|---|---|
-|Standard Deviation|$\sigma$ or $s$|$\sigma$|Variability of individual data points|
-|Standard Error|SE or $\sigma_{\bar{x}}$|$\frac{\sigma}{\sqrt{n}}$|Variability of the sample mean|
+| Metric             | Symbol                   | Formula                   | What it measures                      |
+| ------------------ | ------------------------ | ------------------------- | ------------------------------------- |
+| Standard Deviation | $\sigma$ or $s$          | $\sigma$                  | Variability of individual data points |
+| Standard Error     | SE or $\sigma_{\bar{x}}$ | $\frac{\sigma}{\sqrt{n}}$ | Variability of the sample mean        |
 
 ### The Central Limit Theorem (CLT)
- 
+
 If the sample size n is large enough (typically $n \ge 30$), the sampling distribution of the mean
 will be approximately Normal, regardless of the shape of the original population distribution.
 
@@ -193,16 +193,16 @@ proportion:
 - **Rule 2: Standard Error**: $\sigma_{\hat{p}} = \frac{\sqrt{p(1-p)}}{\sqrt{n}}$
 
 ### The T-Distribution
- 
+
 So far, we assumed we know the population standard deviation $\sigma$. But in practice, we almost
 never know it! We have to estimate it using the sample standard deviation $s$. When we substitute
 $s$ for $\sigma$ in our formulas, the uncertainty increases. The resulting distribution is called
 the Student t-distribution.
- 
+
 > T-Statistic Formula
-> 
+>
 > $t = \frac{\bar{x} - \mu}{s/\sqrt{n}}$
-> 
+>
 > Notice: $s$ (sample SD) instead of $\sigma$ (population SD)
 
 ### The T-Test
@@ -239,26 +239,26 @@ Meaning: We expect the sample defect rate to be within about 0.7% of the true 5%
 
 Sampling distributions are everywhere in ML, from model evaluation to optimization.
 
-1. Cross-Validation Scores:  When you run 5-fold CV, you get 5 accuracy scores. The mean of these is
-a sample statistic! The standard error of this mean tells you how stable your estimate is. Report it
-alongside your mean accuracy.
+1. Cross-Validation Scores: When you run 5-fold CV, you get 5 accuracy scores. The mean of these is
+   a sample statistic! The standard error of this mean tells you how stable your estimate is. Report it
+   alongside your mean accuracy.
 
 1. Ensemble Learning (Bagging): Random Forest creates many bootstrap samples and trains trees
-on each. The final prediction is an average. By the CLT formula $SE = \frac{\sigma}{\sqrt{n}}$ ,
-averaging n trees reduces prediction variance by $\sqrt{n}$
+   on each. The final prediction is an average. By the CLT formula $SE = \frac{\sigma}{\sqrt{n}}$ ,
+   averaging n trees reduces prediction variance by $\sqrt{n}$
 
 1. A/B Testing: When comparing Model A vs Model B, you compare their average metrics. The sampling
-distribution helps calculate confidence intervals. If intervals do not overlap, you have a
-statistically significant difference.
+   distribution helps calculate confidence intervals. If intervals do not overlap, you have a
+   statistically significant difference.
 
 1. Mini-Batch Gradient Descent: In SGD, a mini-batch is a sample. The gradient from that batch is an
-estimate of the true gradient. Larger batch sizes reduce "noise" (SE of gradient) but compute more
-per step. This is SE in action!
+   estimate of the true gradient. Larger batch sizes reduce "noise" (SE of gradient) but compute more
+   per step. This is SE in action!
 
 ### Central Limit Theorem (CLT)
 
 The CLT states that as the sample size $n$ increases, the sampling distribution of the sample mean
-$\bar{x}$ approaches a Normal Distribution  $N(\mu, \frac{\sigma}{\sqrt{n}})$ regardless of the
+$\bar{x}$ approaches a Normal Distribution $N(\mu, \frac{\sigma}{\sqrt{n}})$ regardless of the
 shape of the original population distribution.
 
 ### Confidence Intervals
@@ -269,13 +269,14 @@ A confidence interval is constructed from two main parts: the center (Point Esti
 > $CI = \text{Point Estimate} \pm \text{Margin of Error}$
 >
 > $CI = \bar{x} \pm (z^* \times \frac{\sigma}{\sqrt{n}})$
+>
 > 1. Point Estimate($\bar{x}$): The mean calculated from your specific sample. This is the center of
->   your interval - your best single guess.
+>    your interval - your best single guess.
 > 1. Critical Value($z^*$ or $t^*$): Determined by your Confidence Level. For 95% confidence, $z^* =
 >   1.96$. This tells you how many standard errors wide the net needs to be.
 > 1. Standard Error($\frac{\sigma}{\sqrt{n}}$): How much we expect the sample mean to fluctuate.
 > 1. Margin of Error (ME): The product of Critical Value and Standard Error. This is half the width
->   of your interval - the "reach" of your net in one direction.
+>    of your interval - the "reach" of your net in one direction.
 
 ### Factors Affecting Interval Width
 
@@ -290,12 +291,12 @@ achieve that?
   estimates. Usually hard to control in practice - this is a property of the population.
 
 ## Hypothesis Testing
- 
+
 The mathematical framework for distinguishing signal from noise.
 
 - $H_0$ Null Hypothesis: "The defendant is innocent." We start by assuming the status quo. We assume
   there is no effect, no difference, or no crime committed.
-- $H_1$ Alternative Hypothesis:  "The defendant is guilty." This is what the prosecutor (or data
+- $H_1$ Alternative Hypothesis: "The defendant is guilty." This is what the prosecutor (or data
   scientist) attempts to prove. It claims there is a significant effect or difference.
 
 Core Definitions
@@ -313,7 +314,7 @@ Which Test Statistic to Use
 
 ### Type I & Type II Errors
 
-- Type I Error ($\alpha$):  False Positive. Rejecting a TRUE Null Hypothesis.
+- Type I Error ($\alpha$): False Positive. Rejecting a TRUE Null Hypothesis.
 - Type I Error ($\beta$): False Negative. Failing to reject a FALSE Null Hypothesis.
 
 ## P-Values
@@ -330,10 +331,10 @@ common misconception!
 
 ### The Decision Matrix
 
-||$H_0$ IS TRUE|$H_0$ IS FALSE|
-|---|---|---|
-|Fail to Reject $H_0$(Do nothing)|Correct(True Negative)|Type II Error(False Negative), "Missed Opportunity"|
-|Reject $H_0$(Take action)|Type I Error(False Positive) "False Alarm"|Correct (True Positive) Power = 1 - beta|
+|                                  | $H_0$ IS TRUE                              | $H_0$ IS FALSE                                      |
+| -------------------------------- | ------------------------------------------ | --------------------------------------------------- |
+| Fail to Reject $H_0$(Do nothing) | Correct(True Negative)                     | Type II Error(False Negative), "Missed Opportunity" |
+| Reject $H_0$(Take action)        | Type I Error(False Positive) "False Alarm" | Correct (True Positive) Power = 1 - beta            |
 
 ## One-Sample T-Test
 
@@ -342,6 +343,7 @@ Determining if a sample mean significantly differs from a known standard.
 ## A/B Testing (Two-Sample Z-Test)
 
 ## Analysis of Variance (ANOVA)
+
 Comparing more than two groups without hacking your p-values.
 
 ## Correlation
@@ -384,22 +386,20 @@ In ML, the Prior corresponds to Regularization:
 - L1 regularization = Laplace prior on weights
 
 ## Bayesian vs. Frequentist
- 
+
 ## Higher-level concepts
 
 **Moments** of a function in mathematics are certain quantitative measures related to the shape of the
 function's graph.
 
-* Moment
-  * mean
-  * standard deviation
-  * variance
-  * skewness
-  * kurtosis
-* pdf -- Probability Density Function
-* CDF -- Cumulative Distribution Function
-* CCDF -- Complementary Cumulative Distribution Function
-* Quantile -- Percentile
-* Entropy
-
-
+- Moment
+  - mean
+  - standard deviation
+  - variance
+  - skewness
+  - kurtosis
+- pdf -- Probability Density Function
+- CDF -- Cumulative Distribution Function
+- CCDF -- Complementary Cumulative Distribution Function
+- Quantile -- Percentile
+- Entropy
