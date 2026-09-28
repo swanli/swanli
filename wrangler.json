@@ -1,0 +1,14 @@
+{
+  "name": "swanli",
+  "compatibility_date": "2025-01-01",
+  "main": "./worker/index.ts",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "*/api/og.png",
+      "script": "worker/index.ts"
+    }
+  ]
+}

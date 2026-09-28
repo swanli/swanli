@@ -14,6 +14,8 @@ export function resolveDefaultOgImagePath(
     return "/api/og.png";
   }
 
+  return `/${config.site.ogImage}`;
+
   // Fallback to the static file check when dynamic is disabled
   // This preserves the original validation behavior for non-dynamic setups.
   return `/${config.site.ogImage}`;

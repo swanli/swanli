@@ -7,7 +7,7 @@ export default defineAstroPaperConfig({
     description: "Notes on numerical computation, mathematics, and Julia.",
     author: "Li Hong",
     profile: "https://swanli.pages.dev/",
-    ogImage: "default-og.jpg",
+    ogImage: "og.png",
     lang: "en",
     timezone: "Asia/Shanghai",
     dir: "ltr",
