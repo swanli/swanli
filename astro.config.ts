@@ -2,6 +2,7 @@ import {
   defineConfig,
   envField,
   fontProviders,
+  passthroughImageService,
   svgoOptimizer,
 } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
@@ -22,6 +23,11 @@ import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
 
 export default defineConfig({
+  // Cloudflare Pages doesn't support native Node.js modules (sharp).
+  // Use passthroughImageService to skip image optimization entirely.
+  image: {
+    service: passthroughImageService(),
+  },
   site: config.site.url,
   integrations: [
     mdx(),
