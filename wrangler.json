@@ -3,12 +3,8 @@
   "compatibility_date": "2025-01-01",
   "main": "./worker/index.ts",
   "assets": {
-    "directory": "./dist"
-  },
-  "routes": [
-    {
-      "pattern": "*/api/og.png",
-      "script": "worker/index.ts"
-    }
-  ]
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/og.png"]
+  }
 }
